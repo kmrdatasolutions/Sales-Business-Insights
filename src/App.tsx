@@ -230,7 +230,7 @@ function buildReportData(dataset:Dataset, rows:Record<string,unknown>[], company
   const customers=m.customer?new Set(rows.map(r=>String(r[m.customer]))).size:0;
   const lossRows=m.profit?rows.filter(r=>toReportNumber(r[m.profit])<0).length:0;
   const lossValue=m.profit?Math.abs(rows.reduce((a,r)=>{const n=toReportNumber(r[m.profit]);return n<0?a+n:a},0)):0;
-  const monthly=trend(rows,m.date,m.sales), last=monthly.at(-1), prev=monthly.at(-2);
+  const monthly = trend(rows, m.date, m.sales); const last = monthly[monthly.length - 1]; const prev = monthly[monthly.length - 2];
   const growth=prev&&prev.value!==0?((last!.value-prev.value)/prev.value)*100:null;
   return {company:company||"Your Company",title:pageTitles[page],dataset:dataset.name,generated:new Date().toLocaleString(),rows,sales,profit,margin,orders,customers,lossRows,lossValue,growth,
     topRegion:groupSum(rows,m.region,m.sales)[0]?.name||"Not detected",topCategory:groupSum(rows,m.category,m.sales)[0]?.name||"Not detected",topProduct:groupSum(rows,m.product,m.sales)[0]?.name||"Not detected",
@@ -384,8 +384,8 @@ function BusinessInsights({
   sales: number; profit: number; margin: number; orders: number; customers: number;
 }) {
   const monthly = trend(rows, m.date, m.sales);
-  const last = monthly.at(-1);
-  const previous = monthly.at(-2);
+  const last = monthly[monthly.length - 1];
+const previous = monthly[monthly.length - 2];
   const growth = previous && previous.value !== 0 ? ((last!.value - previous.value) / previous.value) * 100 : null;
 
   const profitRows = m.profit ? rows.filter(r => Number(String(r[m.profit] ?? "").replace(/[$,%\s,]/g, "")) > 0).length : 0;
