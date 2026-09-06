@@ -9,8 +9,8 @@
   "preview": "vite preview",
   "predeploy": "npm run build",
   "deploy": "gh-pages -d dist"
-}
-  "dependencies": {
+},
+"dependencies": {
     "jspdf": "^2.5.2",
     "lucide-react": "^0.468.0",
     "papaparse": "^5.4.3",
