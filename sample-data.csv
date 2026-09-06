@@ -1,0 +1,6 @@
+Order Date,Region,Segment,Category,Product Name,Customer Name,Sales,Quantity,Profit,Shipping Days
+2017-01-12,West,Consumer,Technology,Laptop Pro,Acme Corp,18200,18,6200,2
+2017-02-03,East,Corporate,Technology,Laser Printer,Beta LLC,12400,12,4100,3
+2017-03-19,West,Consumer,Furniture,Executive Chair,Acme Corp,8600,20,2500,4
+2017-04-11,Central,Home Office,Office Supplies,Binders,Delta Inc,3200,44,900,5
+2017-05-08,South,Corporate,Technology,Monitor 27,Gamma Ltd,15600,15,4800,3
