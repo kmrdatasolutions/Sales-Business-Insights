@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
 
-  base: "/sales-business-insights/",
+  base: "/Sales-Business-Insights/",
 
   server: {
     port: 5173,
